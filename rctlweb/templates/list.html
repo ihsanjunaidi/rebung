@@ -1,0 +1,45 @@
+{{template "header.html" .}}
+
+{{if .User}}
+<div class="container">
+    <div class="row">
+        {{template "user-info.html" .}}
+    </div>
+    <div class="row">
+        {{template "user-uid-list.html" .}}
+    </div>
+</div>
+{{end}}
+
+{{if .Users}}
+<div class="container">
+    <div class="row">
+        {{template "user-list.html" .}}
+    </div>
+</div>
+{{end}}
+
+{{if .Server}}
+<div class="container">
+    <div class="row">
+        {{template "server-info.html" .}}
+    </div>
+    <div class="row">
+        {{template "server-svid-list.html" .}}
+    </div>
+</div>
+{{end}}
+
+{{if .Servers}}
+<div class="container">
+    <div class="row">
+        {{template "server-list.html" .}}
+    </div>
+</div>
+{{end}}
+
+<div class="notify">
+    {{template "flash.html" .}}
+</div>
+
+{{template "footer.html" .}}
