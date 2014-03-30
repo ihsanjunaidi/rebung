@@ -1,0 +1,47 @@
+<div class="col-md-8 col-md-offset-2">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h3 class="panel-title grey">{{.Data.listTitle}}
+                <span class="label label-info blue">[{{.Data.total}}]</span>
+            </h3>
+            <table class="table table-striped table-condensed list-user table-bordered">
+                <thead>
+                    <tr>
+                        <td>ID</td>
+                        <td>Login ID</td>
+                        <td>Name</td>
+                        <td>Registered</td>
+                        <td>First Login</td>
+                        <td>Admin</td>
+                        <td>Status</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{range $v := .Users}}
+                    <tr>
+                        <td class="text-center">{{$v.Id}}</td>
+                        <td><a href="/list?uid={{$v.Id}}">{{$v.Login}}</a></td>
+                        <td>{{$v.Name}}</td>
+                        <td>{{$v.Registered}}</td>
+                        <td>{{$v.FirstLogin}}</td>
+                        <td class="text-center">
+                            {{if $v.AdminFlag}}
+                                <span class="glyphicon glyphicon-ok-sign blue"></span>
+                            {{else}}
+                                <span class="glyphicon glyphicon-remove-sign red"></span>
+                            {{end}}
+                        </td>
+                        <td class="text-center">
+                            {{if $v.StatusFlag}}
+                                <span class="glyphicon glyphicon-ok-sign blue"></span>
+                            {{else}}
+                            <span class="glyphicon glyphicon-remove-sign red"></span>
+                            {{end}}
+                        </td>
+                    </tr>
+                    {{end}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
