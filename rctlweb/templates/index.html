@@ -1,0 +1,55 @@
+{{template "header.html" .}}
+
+{{if .UserId}}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+            <div class="panel panel-default">
+                <div class="panel-body text-center">
+                    <h4 class="panel-title">You are already logged in as <span class="text-bold">{{.Username}}</h4>
+                    <h5 class="panel-title"><a href="/home">Home</a></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{else}}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+            <div class="panel panel-default">
+                <div class="panel-heading text-center">
+                    <h4 class="panel-title white">
+                        Rebung.IO Control Panel
+                    </h4>
+                </div>
+                <div class="panel-body">
+                    <form class="form-horizontal" action="/login" method="post">
+                        <div class="form-group">
+                            <div class="col-md-8 col-md-offset-2">
+                                <input type="email" name="login" class="form-control" placeholder="Login" required autofocus />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-8 col-md-offset-2">
+                                <input type="password" name="password" class="form-control" placeholder="Password" required />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4 col-md-offset-4">
+                                <button class="btn btn-lg btn-create btn-block" type="submit">Sign in</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="notify">
+    {{template "flash.html" .}}
+</div>
+{{end}}
+
+{{template "footer.html" .}}
