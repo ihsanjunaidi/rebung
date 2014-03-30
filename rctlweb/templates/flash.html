@@ -1,0 +1,9 @@
+<div class="alert {{if .Flash.success}}alert-success{{end}} {{if .Flash.error}}alert-danger{{end}}">
+    {{if .Flash.error}}
+        {{.Flash.error}}
+    {{end}}
+
+    {{if .Flash.success}}
+        {{.Flash.success}}
+    {{end}}
+</div>
