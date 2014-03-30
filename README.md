@@ -11,6 +11,6 @@ Contains a few components:
 - librebana (low-level C calls to kernel intf/routing table - FreeBSD-specific)
 - rctlweb (admin control panel)
 - rctl (admin control panel - CLI)
-- rweb (primary user web - incomplete
+- rweb (primary user web - incomplete)
 
 Feedback if you like it enough. Thank you.
