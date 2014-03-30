@@ -12,4 +12,4 @@ Contains a few components:
 - rctlweb (admin control panel)
 - rweb (primary user web)
 
-Feedback if you care enough. Thank you.
+Feedback if you like it enough. Thank you.
