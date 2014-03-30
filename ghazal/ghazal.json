@@ -1,0 +1,26 @@
+{
+    "ServerName": "ghazal.s.rebung.io",
+
+    "Bind": [
+        {"Host": "2400:3700:20:4::2:4", "Port": "8082"}
+    ],
+
+    "LogUrl": "https://log.rebung.io:80",
+
+    "AdminEmail": "admin@rebung.io",
+    "SMTPHost": "mail.rebung.io",
+    "SMTPUser": "admin@rebung.io",
+    "SMTPPw": "d0raemon!!",
+
+    "Secret": "secret",
+
+    "TLSCACert": [
+        "/etc/ssl/ca/cacert.pem",
+        "/etc/ssl/ca/positiveca.pem",
+        "/etc/ssl/ca/externalrootca.pem"
+    ],
+
+    "RedisUrl": "dev1.int.n3labs.my:6379",
+    "RedisPw": "d0raemon",
+    "RedisDb": "2"
+}
