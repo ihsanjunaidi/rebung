@@ -1,0 +1,84 @@
+<div class="col-md-12 col-lg-12">
+    <div class="panel panel-default has-trigger">
+        <div class="panel-heading">
+            <h5 class="panel-title pull-right white">Member since {{.User.Registered}}&nbsp;
+                <div class="btn-group">
+                    <button type="button" class="btn btn-settings dropdown-toggle" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-chevron-down">
+                    </button>
+                    <ul class="dropdown-menu sub-options">
+                        <li>
+                            <a id="tunnel-sessions" href="#">
+                                <span class="glyphicon glyphicon-import"></span>&nbsp;&nbsp;Tunnel Sessions
+                            </a>
+                        </li>
+                        <li>
+                            <a id="login-hist" href="#">
+                                <span class="glyphicon glyphicon-log-in"></span>&nbsp;&nbsp;Login History
+                            </a>
+                        </li>
+                        <li>
+                            <a id="activity-hist" href="#">
+                                <span class="glyphicon glyphicon-send"></span>&nbsp;&nbsp;Activity History
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="#" id="admin" class="{{if .User.AdminFlag}}enabled{{else}}disabled{{end}}">
+                            {{if .User.AdminFlag}}
+                            <span class="glyphicon glyphicon-ok"></span>&nbsp;&nbsp;User enabled
+                            {{else}}
+                            <span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;User disabled
+                            {{end}}
+                            </a>
+                        </li>
+                        <li><a id="status" class="{{if .User.StatusFlag}}active{{else}}inactive{{end}}" href="#">
+                            {{if .User.StatusFlag}}
+                            <span class="glyphicon glyphicon-ok"></span>&nbsp;&nbsp;User active
+                            {{else}}
+                            <span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;User inactive
+                            {{end}}
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a id="reset-pw" href="#">
+                                <span class="glyphicon glyphicon-refresh"></span>&nbsp;&nbsp;Reset Password
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </h5>
+            <h4 class="panel-title white">{{.User.Id}} : {{.User.Login}}</h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-5">
+                    <form id="ghazal-form">
+                        <input type="hidden" id="sid" value="{{.SessionId}}" />
+                        <input type="hidden" id="auid" value="{{.User.Id}}" />
+                        <input type="hidden" id="login" value="{{.User.Login}}" />
+                        <div class="form-group">
+                            <label for="name" class="control-label">Name</label>
+								<input type="text" class="form-control" id="name"
+								name="name" placeholder="{{.User.Name}}"
+								autofocus required>
+                            </label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="text-light-bold small">
+                        Login status: {{if .User.FirstLoginFlag}}
+                        First logged in on <span class="blue">
+                        {{.User.FirstLogin}}</span>
+                        {{else}}
+                        Has not logged in
+                        {{end}}
+                    </span>
+                </div>
+            </div>
+        </div><!-- panel-body -->
+    </div>
+</div>
