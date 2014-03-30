@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013 Ihsan Junaidi Ibrahim <ihsan@n3labs.my>
+ * Copyright (c) 2013 Ihsan Junaidi Ibrahim <ihsan.junaidi@gmail.com>
  */
 
 package main
