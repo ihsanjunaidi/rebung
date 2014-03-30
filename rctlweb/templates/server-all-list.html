@@ -1,0 +1,53 @@
+<div class="col-md-8 col-md-offset-2">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h3 class="panel-title grey">{{.Data.listTitle}}
+                <span class="label label-info blue">[{{.Data.total}}]</span>
+            </h3>
+            <table class="table table-striped table-condensed list-user table-bordered">
+                <thead>
+                    <tr>
+                        <td>ID</td>
+                        <td>Server Name</td>
+                        <td>Entity</td>
+                        <td>Access</td>
+                        <td>Tunnel</td>
+                        <td>Tunnel Source</td>
+                        <td>Point-to-Point Prefix</td>
+                        <td>Routed Prefix</td>
+                        <td>Admin</td>
+                        <td>Status</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{range $v := .Servers}}
+                    <tr>
+                        <td class="text-center">{{$v.Id}}</td>
+                        <td><a href="/list?vid={{$v.Id}}">{{$v.Name}}</a></td>
+                        <td>{{$v.Entity}}</td>
+                        <td>{{$v.Access}}</td>
+                        <td>{{$v.Tunnel}}</td>
+                        <td>{{$v.TunnelSrc}}</td>
+                        <td>{{$v.PpPrefix}}</td>
+                        <td>{{$v.RtPrefix}}</td>
+                        <td class="text-center">
+                            {{if $v.AdminFlag}}
+                            <span class="glyphicon glyphicon-ok-sign blue"></span>
+                            {{else}}
+                            <span class="glyphicon glyphicon-remove-sign red"></span>
+                            {{end}}
+                        </td>
+                        <td class="text-center">
+                            {{if $v.StatusFlag}}
+                            <span class="glyphicon glyphicon-ok-sign blue"></span>
+                            {{else}}
+                            <span class="glyphicon glyphicon-remove-sign red"></span>
+                            {{end}}
+                        </td>
+                    </tr>
+                {{end}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
