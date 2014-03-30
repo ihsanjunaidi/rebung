@@ -1,0 +1,147 @@
+<div class="col-md-12 col-lg-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h5 class="panel-title pull-right white">Activated on {{.Server.Activated}}&nbsp;
+                <div class="btn-group">
+                    <button type="button" class="btn btn-settings dropdown-toggle" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-chevron-down">
+                    </button>
+                    <ul class="dropdown-menu sub-options" role="menu">
+                        <li>
+                            <a id="all-sessions" href="#">
+                                <span class="glyphicon glyphicon-tags"></span>&nbsp;&nbsp;All Tunnel Sessions
+                            </a>
+                        </li>
+                        <li>
+                            <a id="assigned-sessions" href="#">
+                                <span class="glyphicon glyphicon-collapse-up"></span>&nbsp;&nbsp;Assigned Tunnel Sessions
+                            </a>
+                        </li>
+                        <li>
+                            <a id="unassigned-sessions" href="#">
+                                <span class="glyphicon glyphicon-collapse-down"></span>&nbsp;&nbsp;Unassigned Tunnel Sessions
+                            </a>
+                        </li>
+                        <li>
+                            <a id="active-sessions" href="#">
+                                <span class="glyphicon glyphicon-check"></span>&nbsp;&nbsp;Active Tunnel Sessions
+                            </a>
+                        </li>
+                        <li>
+                            <a id="session-activity" href="#">
+                                <span class="glyphicon glyphicon-transfer"></span>&nbsp;&nbsp;Server Session Activity Logs
+                            </a>
+                        </li>
+                        <li>
+                            <a id="all-users" href="#">
+                                <span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;Tunnel Session Users
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a id="assign-session" href="#">
+                                <span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;Assign Users
+                            </a>
+                        </li>
+                        <li>
+                            <a id="reassign-session" href="#">
+                                <span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;Reassign Users
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="#" id="admin" class="{{if .Server.AdminFlag}}enabled{{else}}disabled{{end}}">
+                            {{if .Server.AdminFlag}}
+                            <span class="glyphicon glyphicon-ok"></span>&nbsp;&nbsp;Server enabled
+                            {{else}}
+                            <span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;Server disabled
+                            {{end}}
+                            </a>
+                        </li>
+                        <li><a id="status" class="{{if .Server.StatusFlag}}active{{else}}inactive{{end}}" href="#">
+                            {{if .Server.StatusFlag}}
+                            <span class="glyphicon glyphicon-ok"></span>&nbsp;&nbsp;Server active
+                            {{else}}
+                            <span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;Server inactive
+                            {{end}}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </h5>
+            <h4 class="panel-title white">{{.Server.Id}} : {{.Server.Name}} - {{.Server.Entity}}</span></h4>
+        </div>
+
+        <div class="panel-body">
+            <form id="rebana-form">
+                <input type="hidden" id="sid" value="{{.SessionId}}" />
+                <input type="hidden" id="uid" value="{{.UserId}}" />
+                <input type="hidden" id="vid" value="{{.Server.Id}}" />
+                <input type="hidden" id="svname" value="{{.Server.Name}}" />
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="alias" class="control-label">Alias</label>
+                            <input type="text" class="form-control" id="alias"
+                            name="alias" placeholder="{{.Server.Alias}}" required>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="descr" class="control-label">Description</label>
+                            <input type="text" class="form-control" id="descr"
+                            name="descr" placeholder="{{.Server.Descr}}" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="location" class="control-label">Location</label>
+                            <input type="text" class="form-control" id="location"
+                            name="location" placeholder="{{.Server.Location}}" required>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="access" class="control-label">Access</label>
+                            <input type="text" class="form-control" id="access"
+                            name="access" placeholder="{{.Server.Access}}" required>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="tunnel" class="control-label">Tunnel</label>
+                            <input type="text" class="form-control" id="tunnel"
+                            name="tunnel" placeholder="{{.Server.Tunnel}}" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="tun-src" class="control-label">Tunnel Source</label>
+                            <input type="text" class="form-control" id="tun-src"
+                            name="tun-src" placeholder="{{.Server.TunnelSrc}}" required>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="pppfx" class="control-label">Point-to-Point Prefix</label>
+                            <input type="text" class="form-control" id="pppfx"
+                            name="pppfx" placeholder="{{.Server.PpPrefix}}" required>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="rtpfx" class="control-label">Routed Prefix</label>
+                            <input type="text" class="form-control" id="rtpfx"
+                            name="rtpfx" placeholder="{{.Server.RtPrefix}}" required>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div><!-- /.panel -->
+</div>
