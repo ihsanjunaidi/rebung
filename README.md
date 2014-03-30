@@ -10,6 +10,7 @@ Contains a few components:
 - rebanats (6in4 tunnel host controller, linked to librebana via CGo)
 - librebana (low-level C calls to kernel intf/routing table - FreeBSD-specific)
 - rctlweb (admin control panel)
-- rweb (primary user web)
+- rctl (admin control panel - CLI)
+- rweb (primary user web - incomplete
 
 Feedback if you like it enough. Thank you.
