@@ -1,0 +1,25 @@
+{
+    "ServerName": "ctl.rebung.io",
+
+    "Bind": [
+        {"Host": "localhost", "Port": "8080"}
+    ],
+
+    "LogUrl": "https://log.rebung.io:80",
+    "GhazalUrl": "https://ghazal.rebung.io:443",
+    "RebanaUrl": "https://rebana.rebung.io:443",
+
+    "SessionSecret": "secret",
+    "GhazalSecret": "secret",
+    "RebanaSecret": "secret",
+
+    "AppRoot": "/home/ihsan/go/src/rebung/rctlweb/",
+
+    "TLSCACert": [
+        "/etc/ssl/ca/cacert.pem"
+    ],
+
+    "RedisUrl": "localhost:6379",
+    "RedisPw": "password",
+    "RedisDb": "3"
+}
