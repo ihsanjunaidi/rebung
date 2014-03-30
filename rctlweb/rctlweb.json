@@ -5,7 +5,7 @@
         {"Host": "localhost", "Port": "8080"}
     ],
 
-    "LogUrl": "https://log.rebung.io:80",
+    "LogUrl": "https://log.rebung.io:8080",
     "GhazalUrl": "https://ghazal.rebung.io:443",
     "RebanaUrl": "https://rebana.rebung.io:443",
 
