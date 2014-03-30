@@ -7,7 +7,8 @@ Contains a few components:
 - rdbtool (populate/reset Redis DB with test data)
 - ghazal (user database web service)
 - rebana (6in4 tunnel manager web service)
-- rebanats (6in4 tunnel host controller)
+- rebanats (6in4 tunnel host controller, linked to librebana via CGo)
+- librebana (low-level C calls to kernel intf/routing table - FreeBSD-specific)
 - rctlweb (admin control panel)
 - rweb (primary user web)
 
