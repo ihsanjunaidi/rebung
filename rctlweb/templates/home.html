@@ -1,0 +1,93 @@
+{{template "header.html" .}}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 col-lg-12">
+            <form id="#ghazal-form" role="form">
+                <input type="hidden" id="sid" value="{{.SessionId}}" />
+                <input type="hidden" id="uid" value="{{.UserId}}" />
+                <div class="panel-group">
+                    <div class="panel panel-default">
+                        <div class="panel-body user-list">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="clearfix spacer-20"></div>
+
+    <div class="row">
+        <div class="col-md-6 col-lg-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title white">
+                        <span class="glyphicon glyphicon-user"></span> Add User
+                    </h4>
+                </div>
+                <div class="panel-body">
+                    <form class="form-horizontal" action="/add-user" method="post" role="form">
+                        <input type="hidden" name="uid" value="{{.UserId}}" />
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="E-mail" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6">
+                                <button type="submit" class="btn btn-create"><span class="glyphicon glyphicon-plus-sign"></span> Create</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title white">
+                        <span class="glyphicon glyphicon-hdd"></span> Add Server
+                    </h4>
+                </div>
+                <div class="panel-body">
+                    <form class="form-horizontal" action="/add-server" method="post" role="form">
+                        <input type="hidden" name="uid" value="{{.UserId}}" />
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Tunnel server name" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="ppprefix" name="ppprefix" placeholder="Point-to-point prefix, /48 only">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="rtprefix" name="rtprefix" placeholder="Routed prefix, /48 only">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6">
+                                <button type="submit" class="btn btn-create"><span class="glyphicon glyphicon-plus-sign"></span> Create</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div><!-- row -->
+</div><!-- container -->
+
+<div class="notify">
+    {{template "flash.html" .}}
+</div>
+
+{{template "footer.html" .}}
