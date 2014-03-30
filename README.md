@@ -1,5 +1,12 @@
 rebung
 ======
 
-Experimental web services prototype for an IPv6 6in4 tunneling project using GoLang. Contains a few components:
+Experimental web services prototype for a conceptual IPv6 6in4 tunneling project using GoLang. Compiled with Go 1.2, C extension using CGo.
+
+Contains a few components:
 - rdbtool (populate/reset Redis DB with test data)
+- ghazal (user database web service)
+- rebana (6in4 tunnel manager web service)
+- rebanats (6in4 tunnel host controller)
+- rctlweb (admin control panel)
+- rweb (primary user web)
