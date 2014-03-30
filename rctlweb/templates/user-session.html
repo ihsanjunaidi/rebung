@@ -1,0 +1,47 @@
+<div class="col-md-8 col-md-offset-2">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h3 class="panel-title grey">{{.Data.listTitle}}
+                <span class="label label-info blue">[{{.Data.total}}]</span>
+            </h3>
+            <table class="table table-striped table-condensed list-user table-bordered">
+                <thead>
+                    <tr>
+                        <td>Server Name</td>
+                        <td>Type</td>
+                        <td>Tunnel Source</td>
+                        <td>Tunnel Destination</td>
+                        <td>Source Address</td>
+                        <td>Destination Address</td>
+                        <td>Routed Prefix</td>
+                        <td>Status</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{range $v := .UserSessions}}
+                    <tr>
+                        <td class="svinfo">
+                            {{$v.ServerName}}
+                            <input type="hidden" id="svsid" value="{{$v.Id}}" />
+                            <input type="hidden" id="vid" value="{{$v.ServerId}}" />
+                        </td>
+                        <td>{{$v.Type}}</td>
+                        <td>{{$v.TunSrc}}</td>
+                        <td class="tun-dst">{{$v.TunDst}}</td>
+                        <td>{{$v.Src}}</td>
+                        <td>{{$v.Dst}}</td>
+                        <td>{{$v.Rt}}</td>
+                        <td class="text-center trigger">
+                            {{if $v.StatusFlag}}
+                            <span class="glyphicon glyphicon-ok-sign blue active"></span>
+                            {{else}}
+                            <span class="glyphicon glyphicon-remove-sign red inactive"></span>
+                            {{end}}
+                        </td>
+                    </tr>
+                    {{end}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
