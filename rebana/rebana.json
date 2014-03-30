@@ -1,16 +1,16 @@
 {
-    "ServerName": "rebana.s.rebung.io",
+    "ServerName": "rebana.rebung.io",
 
     "Bind": [
-        {"Host": "2400:3700:20:4::2:4", "Port": "8088"}
+        {"Host": "localhost", "Port": "8088"}
     ],
 
-    "LogUrl": "https://log.rebung.io:80",
+    "LogUrl": "https://localhost:8080",
 
     "AdminEmail": "admin@rebung.io",
-    "SMTPHost": "mail.rebung.io",
-    "SMTPUser": "admin@rebung.io",
-    "SMTPPw": "d0raemon!!",
+    "SMTPHost": "localhost",
+    "SMTPUser": "user",
+    "SMTPPw": "password",
 
     "Secret": "secret",
 
@@ -20,7 +20,7 @@
         "/etc/ssl/ca/externalrootca.pem"
     ],
 
-    "RedisUrl": "dev1.int.n3labs.my:6379",
-    "RedisPw": "d0raemon",
+    "RedisUrl": "localhost:6379",
+    "RedisPw": "password",
     "RedisDb": "1"
 }
