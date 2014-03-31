@@ -61,8 +61,8 @@ func main() {
 		err      error
 		debug    bool
 		help     bool
-		redisUrl = "dev1.int.n3labs.my:6379"
-		redisPw  = "d0raemon"
+		redisUrl = "localhost:6379"
+		redisPw  = "password"
 		redisDb  int
 	)
 
