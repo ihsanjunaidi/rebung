@@ -1,5 +1,5 @@
 {
-    "ServerName": "tun01-s.rebung.io",
+    "ServerName": "server.domain",
 
     "Bind": [
         { "Host": "localhost", "Port": "8100" }
@@ -7,8 +7,8 @@
 
     "Secret": "secret",
 
-    "RebanaUrl": "https://rebana.rebung.io:443",
-    "LogUrl": "https://log.rebung.io:443",
+    "RebanaUrl": "https://rebana.domain:443",
+    "LogUrl": "https://log.domain:443",
 
     "TLSCACert": [
         "/etc/ssl/ca/cacert.pem"
