@@ -1,13 +1,13 @@
 {
-    "ServerName": "ghazal.rebung.io",
+    "ServerName": "server.domain",
 
     "Bind": [
         {"Host": "localhost", "Port": "8082"}
     ],
 
-    "LogUrl": "https://log.rebung.io:8080",
+    "LogUrl": "https://log.domain:8080",
 
-    "AdminEmail": "admin@rebung.io",
+    "AdminEmail": "admin@domain",
     "SMTPHost": "localhost",
     "SMTPUser": "user",
     "SMTPPw": "password",
