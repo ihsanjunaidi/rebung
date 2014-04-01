@@ -1,7 +1,7 @@
 rebung
 ======
 
-Experimental prototype for a conceptual IPv6 6in4 tunneling web service using Go. Coded on FreeBSD 9 amd/64 with Go 1.2 and CGo.
+Experimental prototype for an IPv6 6in4 tunneling web service using Go. Coded on FreeBSD 9 amd/64 with Go 1.2 and CGo.
 
 Contains a few components:
 - rdbtool (populate/reset Redis DB with test data)
